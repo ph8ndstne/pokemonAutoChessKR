@@ -127,7 +127,7 @@ export default class CustomLobbyRoom extends Room<LobbyState> {
     this.clock.setInterval(async () => {
       const ccu = await matchMaker.stats.getGlobalCCU()
       this.state.ccu = ccu
-    }, 1000)
+    }, 200)
 
     this.unsubscribeLobby = await subscribeLobby((roomId, data) => {
       if (this.rooms) {
